@@ -18,6 +18,9 @@ var Menu = {
         console.log(`dish.price: ${dish.price}`);
         this.courses[courseName].push(dish);
         console.log(menu.courses);
+    },
+    getRandomDishFromCourse: function (courseName){
+
     }
 }
 
