@@ -20,10 +20,18 @@ var Menu = {
         console.log(menu.courses);
     },
     getRandomDishFromCourse: function (courseName){
-
+        const dishes = this.courses[courseName];
+        var randomNum = Math.floor(Math.random()*dishes.length);
+        const dish = dishes[randomNum];
+        console.log(`random dish: ${dish.name}, ${dish.price}`);
+        return dish; 
     }
 }
 
 console.log(menu);
 menu.addDishToCourse('appetizers', 'poppers', 10);
+menu.addDishToCourse('appetizers', 'Chicken Wings', 12);
+menu.addDishToCourse('appetizers','Mozzarella Sticks', '6');
 console.log(menu.courses.appetizers);
+
+console.log(menu.getRandomDishFromCourse('appetizers'));
