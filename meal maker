@@ -1,6 +1,6 @@
 //  Meal Maker Project for Dev30
 
-// Step 1
+// Menu Object
 var Menu = {
     courses: {
         appetizers: [],
@@ -8,6 +8,19 @@ var Menu = {
         desserts: []
     },
     addDishToCourse: function(courseName, dishName, dishPrice){
-    
+        var dish = {
+            name: dishName,
+            price: dishPrice
+        };
+        console.log(`Dish: ${dish}`);
+        console.log(`CourseName: ${courseName}`);
+        console.log(`dish.name: ${dish.name}`);
+        console.log(`dish.price: ${dish.price}`);
+        this.courses[courseName].push(dish);
+        console.log(menu.courses);
     }
 }
+
+console.log(menu);
+menu.addDishToCourse('appetizers', 'poppers', 10);
+console.log(menu.courses.appetizers);
