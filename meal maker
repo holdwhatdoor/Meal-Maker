@@ -2,5 +2,18 @@
 
 // Step 1
 var Menu = {
+    courses: {
+        appetizers: {
 
+        },
+        mains: {
+
+        },
+        desserts: {
+
+        }
+    },
+    addDishToCourse: function(courseName, dishName, dishPrice){
+    
+    }
 }
