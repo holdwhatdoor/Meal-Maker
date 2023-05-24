@@ -25,6 +25,23 @@ var Menu = {
         const dish = dishes[randomNum];
         console.log(`random dish: ${dish.name}, ${dish.price}`);
         return dish; 
+    },
+    getRandomMeal: function (){
+        var appCourse = this.getRandomDishFromCourse('appetizers');
+        var mainCourse = this.getRandomDishFromCourse('mains');
+        var dessertCourse = this.getRandomDishFromCourse('desserts');
+
+        const meal = {
+            app: appCourse,
+            main: mainCourse,
+            dessert: dessertCourse
+        }
+
+        var mealPrice = (meal.app.price + meal.main.price + meal.dessert.price);
+        console.log(`Random meal: app: ${meal.app.name}, main: ${meal.main.name}, desser: ${meal.dessert.name}`);
+        console.log(`Meal of ${meal.app.name} appetizer, ${meal.main.name} main course and ${meal.dessert.name} dessert, costs $${mealPrice}`);
+        
+        return meal;
     }
 }
 
@@ -32,6 +49,16 @@ console.log(menu);
 menu.addDishToCourse('appetizers', 'poppers', 10);
 menu.addDishToCourse('appetizers', 'Chicken Wings', 12);
 menu.addDishToCourse('appetizers','Mozzarella Sticks', '6');
+
+menu.addDishToCourse('mains', 'Steak and Potatoes', 25);
+menu.addDishToCourse('mains', 'Chicken and Rice', 20);
+menu.addDishToCourse('mains', 'Fish and Zuccini', 20);
+
+menu.addDishToCourse('desserts', 'Ice Cream', 10);
+menu.addDishToCourse('desserts', 'Chocolate Cake', 14);
+menu.addDishToCourse('desserts', 'Blueberry Pie', 12);
+
 console.log(menu.courses.appetizers);
 
 console.log(menu.getRandomDishFromCourse('appetizers'));
+console.log(menu.getRandomMeal());
